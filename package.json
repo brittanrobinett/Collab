@@ -1,0 +1,22 @@
+{
+  "name": "collab",
+  "version": "1.0.0",
+  "description": "real-time chat application for students",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MicahWitthaus/Collab.git"
+  },
+  "author": "Micah Witthaus & Brittan Robinett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MicahWitthaus/Collab/issues"
+  },
+  "homepage": "https://github.com/MicahWitthaus/Collab#readme",
+  "dependencies": {
+    "socket.io": "^2.2.0"
+  }
+}
