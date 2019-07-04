@@ -13,35 +13,63 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <style>
-    #message-container {
-      height: 100px;
+    .wrapper {
+      display: flex;
+      width: 100%;
+    }
+    #sidebar {
+      width: 200px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      z-index: 999;
+      background: grey;
+      color: white;
+    }
+    #sidebar a {
+      color: inherit;
+      text-decoration: none;
+    }
+    #message-input {
+      margin-left: 200px;
+      width: 100%;
+      border: 0;
+      box-shadow: none;
+    }
+    #send-button {
+      position: fixed;
+      bottom: 0;
+      right: 0;
     }
   </style>
 
 </head>
 
 <body>
-  <!-- Messaging Container -->
-  <div class="fluid-container">
-    <div class="row no-gutters justify-content-end">
-      <div id="message-container" class="col-10">hi</div>
-    </div>
-  </div>
-
-  <!-- Type and Send Message Form -->
-  <div class="fluid-container">
-    <form id="send-container">
-      <div class="row no-gutters justify-content-end">
-        <div class="col-9">
-          <input type="text" id="message-input" class="form-control" placeholder="Enter message..." />
-        </div>
-        <div class="col-1 ">
-          <button type="submit" id="send-button" class="btn btn-primary">Send</button>
-        </div>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar" class="p-2">
+      <div class="sidebar-header">
+          <h4>Brittan Robinett</h4>
       </div>
-    </form>
+      <ul class="list-unstyled components">
+        <p>Groups</p>
+        <li class="active">
+          <a href="#">Class1</a>
+        </li>
+        <li>
+          <a href="#">Class2</a>
+        </li>
+      </ul>
+    </nav>
   </div>
 
+    <!-- Type and Send Message Form -->
+    <form class="form-inline fixed-bottom">
+      <input type="text" id="message-input" class="form-control" placeholder="Enter message..." />
+      <button type="submit" id="send-button" class="btn btn-primary">Send</button>
+    </form>
 
 
 
