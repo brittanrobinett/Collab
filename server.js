@@ -11,6 +11,8 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html')
 });
 
+app.use(express.static(__dirname));
+
 io.sockets.on('connection', function (socket) {
     connections.push(socket);
     console.log('Connected: %s sockets connected', connections.length);
