@@ -2,7 +2,7 @@
   "name": "collab",
   "version": "1.0.0",
   "description": "real-time chat application for students",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "devStart": "nodemon server.js"
   },
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/MicahWitthaus/Collab#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
