@@ -14,8 +14,8 @@
   <!-- Bootstrap CSS-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-  <!-- external stylesheet-->
-  <link rel="stylesheet" type="text/css" href="public/css/style.css"/>
+  <!-- My External Stylesheet-->
+  <link rel="stylesheet" type="text/css" href="public/css/style.css" />
 </head>
 
 <body>
@@ -37,14 +37,14 @@
     </nav>
   </div>
 
+  <!-- Chat Window -->
+  <div id="chat" class="chat"></div>
+
   <!-- Type and Send Message Form -->
-  <form class="form-inline fixed-bottom">
+  <form id="message-form" class="form-inline fixed-bottom">
     <input type="text" id="message-input" class="form-control" placeholder="Enter message..." />
     <button type="submit" id="send-button" class="btn btn-primary">Send</button>
   </form>
-
-
-
 
   <!-- JQuery, Popper.js, and JS CDN for Bootstrap -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -59,7 +59,19 @@
   <script>
     $(function () {
       var socket = io.connect();
+      var $messageForm = $('#message-form');
       var $messageInput = $('#message-input');
+      var $chat = $('#chat');
+
+      $messageForm.submit(function (e) {
+        e.preventDefault();
+        socket.emit('send message', $messageInput.val());
+        $messageInput.val('');
+      })
+
+      socket.on('new message', function (data) {
+        $chat.append('<div class="well">' + data.msg + '</div>');
+      })
     })
   </script>
 </body>
