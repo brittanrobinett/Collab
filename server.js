@@ -5,13 +5,13 @@ const io = require('socket.io').listen(server);
 users = [];
 connections = [];
 
+app.use(express.static(__dirname));
+
 server.listen(process.env.PORT || 3000);
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html')
 });
-
-app.use(express.static(__dirname));
 
 io.sockets.on('connection', function (socket) {
     connections.push(socket);
