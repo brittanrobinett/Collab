@@ -1,16 +1,14 @@
-
   .wrapper {
     display: flex;
     width: 100%;
   }
 
-  #sidebar {
-    width: 225px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    z-index: 999;
+  #sidebar-wrapper {
+    width: 250px;
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    overflow-y: hidden;
     background: grey;
     color: white;
   }
@@ -21,8 +19,8 @@
   }
 
   #message-input {
-    margin-left: 225px;
     width: 100%;
+    margin-left: 250px;
     border: 0;
     box-shadow: none;
   }
@@ -33,6 +31,28 @@
     right: 0;
   }
 
+  #page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding-left: 250px;
+  }
+
   .chat {
-    margin-left: 225px;
+    padding-left: 250px;
+  }
+
+  .message {
+    border: 1px solid grey;
+  }
+
+  @media (max-width: 600px) {
+    #sidebar-wrapper {
+      width: 0;
+    }
+    #page-content-wrapper {
+      padding-left: 0px;
+    }
+    #message-input {
+      margin-left: 0px;
+    }
   }
