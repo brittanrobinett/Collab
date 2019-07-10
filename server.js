@@ -5,12 +5,13 @@ const io = require('socket.io').listen(server);
 users = [];
 connections = [];
 
+// Set Static Path
 app.use(express.static(__dirname));
 
 server.listen(process.env.PORT || 3000);
 
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(__dirname + '/views/register.html')
 });
 
 io.sockets.on('connection', function (socket) {
