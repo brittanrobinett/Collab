@@ -2,9 +2,9 @@
   "name": "collab",
   "version": "1.0.0",
   "description": "real-time chat application for students",
-  "main": "server.js",
+  "main": "App.js",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon App.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,8 @@
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8"
   }
 }
